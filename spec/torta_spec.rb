@@ -42,7 +42,7 @@ describe Torta do
 
   describe "#status" do
     it "returns the torta's current status" do
-       expect(torta.status).to match('crudo')
+      expect(torta.status).to match('crudo')
     end
     context "when unbaked" do
       it "is `crudo`" do
@@ -52,36 +52,36 @@ describe Torta do
 
     context "when baked for less than 5 minutes" do
       it "is `crudo`" do
-         torta.bake!(2)
-         expect(torta.status).to match('crudo')
+        torta.bake!(2)
+        expect(torta.status).to match('crudo')
       end
     end
 
     context "when baked for at least 5 but less than 7 minutes" do
       it "is `casi listo`" do
-         torta.bake!(6)
-         expect(torta.status).to match('casi listo')
+        torta.bake!(6)
+        expect(torta.status).to match('casi listo')
       end
     end
 
     context "when baked for at least 7 but less or equal than 10 minutes" do
       it "is `listo`" do
-         torta.bake!(8)
-         expect(torta.status).to match('listo')
+        torta.bake!(8)
+        expect(torta.status).to match('listo')
       end
     end
 
     context "when baked for at least 11 minutes" do
       it "is `quemado`" do
-         torta.bake!(11)
-         expect(torta.status).to match('quemado')
+        torta.bake!(11)
+        expect(torta.status).to match('quemado')
       end
     end
   end
 
   describe "#bake_time" do
     it "returns bake time of the specified type" do
-       expect(torta.bake_time).to match(10)
+      expect(torta.bake_time).to match(10)
     end
   end
 end
